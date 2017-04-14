@@ -1,5 +1,68 @@
 extends layout
 
 block content
-  h1= Login
-  p Ini buat Login
+
+  .index
+    .col-xs-12.col-md-6.col-md-offset-3
+      .logo
+        img.center-block(src="/images/logo.png")
+      .div.error
+        p= error
+        p(id="unotif")
+        p(id="pnotif")
+      form(action="/", method="post")
+        .form-group.a
+          .signin    
+            input.form-control(type="text", name="username_or_email", placeholder="Email atau Username", id="username")
+          .signin
+            input.form-control(type="password", name="password", placeholder="Password", id="password")
+          .signin
+            button(type="submit", id="login", disabled) Log In
+          .signin    
+            a.forgot-btn(href="#", id="forgot", onclick="undev(3)") Lupa password?
+      .form-group.b
+        .signin
+          button.passport(type="submit", id="facebook", onclick="undev(1)") Log In dengan Facebook
+        .signin
+          button.passport(type="submit", id="twitter", onclick="undev(2)") Log In dengan Twitter
+        .signin
+          p.note.a Prelo tidak akan post apapun tanpa persetujuan kamu
+        .signin
+          p.note.b Belum Punya ID Prelo? 
+            b
+             a(href="#", id="new", onclick="undev(4)") Daftar sekarang
+  script.
+    // Form input checking
+    var username = document.getElementById('username');
+    var unotif = document.getElementById('unotif');
+    var pnotif = document.getElementById('pnotif');
+    var login_btn = document.getElementById('login');
+    username.onkeyup = function() {
+        if(username.value.length < 4){
+            unotif.innerHTML = 'Please enter at least 4 username/email characters.'
+        }else{
+            unotif.innerHTML = '';
+            login_btn.disabled = false;
+        }
+    }
+    password.onkeyup = function() {
+        if(password.value.length < 6){
+            pnotif.innerHTML = 'Please enter at least 6 password characters.'
+        }else{
+            pnotif.innerHTML = '';
+            login_btn.disabled = false;
+        }
+    }
+    
+    // Still in development message
+    function undev(val){
+        if(val == 1){
+            document.getElementById("facebook").innerHTML = 'Still in Development'
+        }else if(val == 2){
+            document.getElementById("twitter").innerHTML = 'Still in Development'
+        }else if(val == 3){
+            document.getElementById("forgot").innerHTML = 'Still in Development'
+        }else{
+            document.getElementById("new").innerHTML = 'Still in Development'
+        }
+    }

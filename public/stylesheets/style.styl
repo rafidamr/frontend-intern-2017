@@ -1,5 +1,168 @@
 body
-  padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
-a
-  color: #00a79d
+    color white
+    font 11px 'Open Sans', sans-serif
+    background-color #f0f0f0
+
+.index, .lovelist
+    height 100%
+    width 100%
+
+.index
+    background-color #00a79d
+    position fixed
+    button
+        width 100%
+        background-color transparent
+        border 0.5px rgba(255,255,255,0.7) solid
+        padding 7px
+        font-size 13px
+        font-weight 600
+    .passport
+        font-size 11px
+        border none
+        background-color #00978d
+        border-bottom 2px #00897B solid
+
+.logo
+    width auto
+    height auto
+    margin 35% auto
+
+.form-group
+    &.a
+        padding-bottom 25px
+
+.signin
+    margin 6px auto
+
+.form-control
+    background-color #00978d
+    border 0
+    box-shadow none
+    border-radius 0
+    color white
+    font-size 11px
+    &::-webkit-input-placeholder
+        color #cfd8dc
+    &:-moz-placeholder
+        color #cfd8dc
+    &::-moz-placeholder
+        color #cfd8dc
+    &:-ms-input-placeholder
+        color #cfd8dc
+
+a,a:hover,a:focus
+    color white
+    text-decoration none !important
+
+.forgot-btn
+    float right
+    &:hover
+        border-bottom 1px white solid
+
+.note
+    text-align center
+    &.a
+        font-size 10px
+        border-bottom 1px rgba(255,255,255,0.7) solid
+        padding-bottom 2px
+    &.b
+        padding-top 5px
+
+.container-fluid
+    background-color #00a79d
+
+.navbar-toggle,.navbar-toggle:hover
+    float left
+    z-index 3
+    background-color transparent !important
+    border none
+
+.icon-bar
+    background-color white !important
+
+.navbar-brand
+    position absolute
+    width 100%
+    left 0
+    text-align center
+    margin 0 auto
+
+.nav-logo
+    margin-top -5px
+    max-height 150%
+    max-width 150%
+
+.navbar-default
+    .navbar-collapse
+        border-color transparent !important
+    .navbar-nav
+        & > li
+            & > a
+                color white !important
+
+.other-menus
+    position fixed
+    float right
+    right 0
+    top 0
+    font-size 20px
+    margin-top 10px
+
+.fa
+    margin-right 20px
+
+.list
+    margin-top 70px
+    color #444
+
+.list-title
+    margin-bottom 20px
+    width 100%
+    font-size 2rem
+    border-bottom 1px #dadada solid
+
+.panel
+    border-radius 0px
+    outline #dadada solid 1px
+    margin 0px
+
+.media-object
+    width 70px
+    height 70px
+
+.media-heading
+    font-size 1.4rem
+
+.price
+    font-size 1.2rem
+    color #00a79d
+
+.fa-comment-o,.fa-heart-o
+    font-size 1.2rem
+    color #ccc
+    margin-right 8px
+
+.list-loader
+    width 100%
+    height auto
+    padding 30px
+
+.loader
+    background-color white
+    border-radius 15px
+    color #00a79d
+    padding 2px 15px
+    border 1px #ccc solid
+
+@media screen and (min-width: 450px)     body,.form-control,.passport
+    font-size 13px
+
+@media screen and (min-width: 450px)
+    .note
+        &.a
+            font-size 11px
+    .logo
+        margin 10%
+    .other-menus
+        margin 10px 8% auto auto
